@@ -10,46 +10,55 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("IbraTech File Tree Extractor");
         System.out.println(
-                "This script will extract all files from a given directory and its subdirectories into one folder");
+                "This script will extract all files from a given directory and its subdirectories into one folder\n");
         System.out.println(
-                "This script does not come with any warranty, neither implied nor explicit. I am not responsible for any damage caused by this script. While it is unlikey to cause any damage, it is still possible. Please use it at your own risk.");
+                "Disclaimer: No warranties accompany this script, whether stated explicitly or implicitly. Usage of this product is at the user's own risk. The owner does not provide supervision and cannot be held liable for any damage caused. Through the utilization of this script, you acknowledge and accept the inherent risks posed by a product composed by a 17-year-old in 15 minutes.\n");
+        System.out.println();
+        // Ask user to agree to terms
+        System.out.println("Do you agree to the terms and conditions? (y/n)\n");
         sc = new Scanner(System.in);
-        // take source path from user
-        System.out.println("Enter the source path");
-        String sourceText = sc.nextLine();
-        // check if file exists
-        File source = new File(sourceText);
-        while (!source.exists() || source.isFile()) {
-            System.out.println("Path does not exist. Try again");
+        String ans = sc.nextLine();
+        if (ans.equals("y")) {
+            // take source path from user
             System.out.println("Enter the source path");
-            sourceText = sc.nextLine();
-            source = new File(sourceText);
-        }
-        System.out.println("Enter the destination path");
-        String destinationText = sc.nextLine();
-        // check if file exists
-        File destination = new File(destinationText);
-        while (!destination.exists()) {
-            System.out.println("Path does not exist. Would you like to create a new file? (y/n)");
-            String answer = sc.nextLine();
-            if (answer.equals("y")) {
-                try {
-                    Files.createFile(destination.toPath());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                System.out.println("Enter the destination path");
-                destinationText = sc.nextLine();
-                destination = new File(destinationText);
+            String sourceText = sc.nextLine();
+            // check if file exists
+            File source = new File(sourceText);
+            while (!source.exists() || source.isFile()) {
+                System.out.println("Path does not exist. Try again");
+                System.out.println("Enter the source path");
+                sourceText = sc.nextLine();
+                source = new File(sourceText);
             }
+            System.out.println("Enter the destination path");
+            String destinationText = sc.nextLine();
+            // check if file exists
+            File destination = new File(destinationText);
+            while (!destination.exists()) {
+                System.out.println("Path does not exist. Would you like to create a new file? (y/n)");
+                ans = sc.nextLine();
+                if (ans.equals("y")) {
+                    try {
+                        Files.createFile(destination.toPath());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    System.out.println("Enter the destination path");
+                    destinationText = sc.nextLine();
+                    destination = new File(destinationText);
+                }
+            }
+
+            System.out.println("Starting extraction...");
+
+            transferFiles(destination, source);
+
+            System.out.println("Extraction complete");
+        } else {
+            System.out.println("Exiting...");
+            System.exit(0);
         }
-
-        System.out.println("Starting extraction...");
-
-        transferFiles(destination, source);
-
-        System.out.println("Extraction complete");
     }
 
     static void transferFiles(File saveDirectory, File currentDirectory) {
@@ -118,5 +127,4 @@ public class Main {
         else
             return "";
     }
-
 }
