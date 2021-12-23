@@ -1,5 +1,5 @@
 # File-Tree-Extractor
-This is a Java Script which takes a folder with several nested directories inside and extracts them into one big folder. I created this script to aid in my Plex Library transcoding, as HandBrake was unable to parse through my Folder-organized Library of movies. However, it can be used for anything that requires comverting trees of folders into one big folder
+This is a Java Script (No, not Javascript. It's a script written in Java) which takes a folder with several nested directories inside and extracts them into one big folder. I created this script to aid in my Plex Library transcoding, as HandBrake was unable to parse through my Folder-organized Library of movies. However, it can be used for anything that requires comverting trees of folders into one big folder
 
 ## How to use:
 
