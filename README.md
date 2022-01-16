@@ -5,9 +5,9 @@ This is a Java Script (No, not Javascript. It's a script written in Java) which 
 
 **This tutorial assumes you know how file paths work. If you don't, wait for me to make a GUI version of this app 😄**
 
-1. First off, make sure you have some way of running Java code. I personally like to use VSCode with the Java extension, along with the OpenJDK JVM. However that portion is entirely up to you. You could be using Eclipse, IntelliJ IDEA, or your own IDE which you developped to defy this list. As long as you can exectute Java files, you're all set!
+1. First off, make sure you have some way of running Java code. I personally like to use VSCode with the Java extension, along with the OpenJDK JVM. However that portion is entirely up to you. You could be using Eclipse, IntelliJ IDEA, NetBeans, or your own IDE which you developped solely to defy this list. As long as you can exectute Java files, you're all set!
 
-2. When you first run this program, I'd suggest reading the disclaimer, since it's pretty important. After all, I'm not a professional. I made this script in 15 minutes because I couldn't be bothered looking for software online that did what I needed. I tried to add as many edge cases as possible, but hey I'm not a professional programmer yet (maybe one day 🥺)
+2. When you first run this program, I'd suggest reading the disclaimer, since it's pretty important. After all, I'm not a professional. I made this script in 15 minutes because I couldn't be bothered looking for software online that did what I needed (Looking back, it probably would've taken longer to find software online versus writing this script). I tried to add as many edge cases as possible, but hey I'm not a professional programmer yet (maybe one day 🥺)
 
 3. You'll then be asked to enter the file path for the source directory. This is the folder with all the folders inside with elements you'd like to extract. For example, if my source directory was
 
@@ -21,6 +21,8 @@ For example:
 
 `C:\School\ExtractedCode`
 
+I should mention that my script does not play well with extracting files to a folder inside the source directory. That is a bug that is currently in process of being fixed 😃
+
 5. After that, the script is off! The script is not *yet* multithreaded, so the script may take some time to run. If it detects any files with the same name, it will alert you and ask you to either rename or overwrite that file. 
 ---
 ## TODO:
@@ -30,6 +32,10 @@ For example:
 - Fix whatevers broken? I guess?
 ---
 
+--
+## Known Issues
+- Extracting to a folder inside the source directory causes infinite recursion because of the way the way the script works
+--
 
 **Disclaimer: No warranties accompany this script, whether stated explicitly or implicitly. Usage of this product is at the user's own risk. The owner does not provide supervision and cannot be held liable for any damage caused. Through the utilization of this script, you acknowledge and accept the inherent risks posed by a product composed by a 17-year-old in 15 minutes.**
 
