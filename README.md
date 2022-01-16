@@ -32,10 +32,10 @@ I should mention that my script does not play well with extracting files to a fo
 - Fix whatevers broken? I guess?
 ---
 
---
 ## Known Issues
 - Extracting to a folder inside the source directory causes infinite recursion because of the way the way the script works
---
+
+---
 
 **Disclaimer: No warranties accompany this script, whether stated explicitly or implicitly. Usage of this product is at the user's own risk. The owner does not provide supervision and cannot be held liable for any damage caused. Through the utilization of this script, you acknowledge and accept the inherent risks posed by a product composed by a 17-year-old in 15 minutes.**
 
